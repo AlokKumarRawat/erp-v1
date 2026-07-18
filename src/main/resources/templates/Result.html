@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body class="grid grid-cols-4">
+<div th:replace="/fragments/teacher-nav::mynav"></div>
+
+<div class="col-span-3 bg-gray-200">
+  <section
+          id="marks"
+          class="bg-gray-200 p-6 rounded shadow mb-8 m-4 w-full "
+  >
+    <h1
+            class="text-3xl font-bold mb-10 bg-blue-500 text-center p-2 pl-4 rounded-2xl text-white"
+    >
+      Upload marks
+    </h1>
+
+    <form th:action="@{/marks/save}" method="post"
+          class="bg-white p-6 rounded shadow max-w-2xl mx-auto flex flex-col gap-4">
+
+
+
+
+      <table class="min-w-full border border-gray-300 text-center text-sm">
+        <thead class="bg-blue-500 text-white">
+        <tr>
+          <th class="p-3 border">Student Id</th>
+          <th class="p-3 border">Student Name</th>
+          <th class="p-3 border">Maximum marks</th>
+          <th class="p-3 border">Obtained marks</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="student, stat : ${allStudents}">
+
+          <td class="p-3 border">
+            <span th:text="${student.id}"></span>
+
+            <input type="hidden"
+                   th:name="marksList[__${stat.index}__].studentId"
+                   th:value="${student.id}">
+          </td>
+
+          <td class="p-3 border">
+            <span th:text="${student.fullname}"></span>
+          </td>
+
+          <td class="p-3 border">
+            <input type="number"
+                   th:name="marksList[__${stat.index}__].maxMarks">
+          </td>
+
+          <td class="p-3 border">
+            <input type="number"
+                   th:name="marksList[__${stat.index}__].obtainedMarks">
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded">
+        Submit Marks
+      </button>
+    </form>
+
+    <div class="alert alert-success" th:if="${message}" th:text="${message}">
+
+    </div>
+  </section>
+
+
+</div>
+</body>
+</html>

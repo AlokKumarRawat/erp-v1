@@ -1,0 +1,160 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body class="grid grid-cols-4 scroll-smooth bg-gray-200">
+<div th:replace="fragments/admin-nav::myNav"></div>
+<div class="col-span-3 bg-gray-200 p-6">
+    <section id="schedule">
+
+
+        <h1
+                class="text-3xl font-bold mb-10 bg-blue-500 p-2 pl-4 text-center rounded-2xl text-white"
+        >
+            Create Schedule
+        </h1>
+
+        <form
+                class="bg-white p-4 rounded shadow  mx-auto grid grid-rows-3  gap-2 " method="post" action="/addSchedule"
+        >
+            <select name="Days" id="day" class="row-span-1 border-2 p-2 rounded-2xl max-w-md w-sm m-auto text-center">
+                <option value="">Day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+
+            <div class="row-span-1 p-2">
+                <select name="First" id="1st" class="border-2 rounded-2xl p-2 text-center  m-2">
+                    <option value="">Lecture-1</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Second" id="2nd" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-2</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Third" id="3rd" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-3</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Fourth" id="4th" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-4</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Fifth" id="5th" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-5</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Sixth" id="6th" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-6</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Seventh" id="7th" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-7</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+                <select name="Eighth" id="8th" class="border-2 rounded-2xl p-2 text-center text m-2">
+                    <option value="">Lecture-8</option>
+                    <option value="Math/Bio">Math/Bio</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computer/Physical Education">Computer/Physical Education</option>
+                    <option value="Physics Lab">Physics Lab</option>
+                    <option value="Chemistry Lab">Chemistry Lab</option>
+                    <option value="Computer Lab/Physical Education">Computer Lab/Physical Education</option>
+                    <option value="Bio Lab/Math">Bio Lab/Math</option>
+                </select>
+
+
+            </div>
+            <button
+                    class="row-span-1 bg-green-600 text-white py-2 rounded-2xl max-w-md w-sm m-auto"
+            >
+                Save schedule
+            </button>
+        </form>
+        <div class="alert alert-success" th:if="${message}" th:text="${message}"></div>
+    </section>
+</div>
+
+</body>
+</html>

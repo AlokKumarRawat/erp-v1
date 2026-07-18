@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/output.css" rel="stylesheet" />
+  </head>
+  <body class="grid grid-cols-4">
+    <div th:replace="~{/fragments/teacher-nav::mynav}"></div>
+
+    <div class="col-span-3 bg-gray-200">
+      <div class="grid grid-cols-3 m-4 mb-5 p-4 gap-10 ">
+        <div
+                id="card-1"
+                class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl "
+        >
+          <h2 class="mb-4 text-center">No of Student</h2>
+          <h4 class="mb-4 text-center">Count</h4>
+        </div>
+        <div
+                id="card-2"
+                class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+        >
+          <h2 class="mb-4 text-center">No of Teacher</h2>
+          <h4 class="mb-4 text-center">Count</h4>
+        </div>
+        <div
+                id="card-3"
+                class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+        >
+          <h2 class="mb-4 text-center">Schedule</h2>
+          <h4 class="mb-4 text-center">View</h4>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>

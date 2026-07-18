@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/output.css" rel="stylesheet" />
+    <title>Login</title>
+  </head>
+  <body class="flex justify-center items-center h-screen bg-gray-100">
+    <div class="border-2 rounded-2xl w-xl md:w-[500px] p-8 bg-white shadow-md">
+      <h2 class="text-3xl font-bold text-center mb-6">
+        COLLEGE OF ARTS AND SCIENCE
+      </h2>
+      <h2 class=" text-center font-bold mb-6">Please login to your account.</h2>
+      <p th:if="${error}"
+         th:text="${error}"
+         class="text-red-600 text-center font-semibold mb-4">
+      </p>
+
+      <form method="post" action="/login" class="flex flex-col gap-5 m-2 items-center">
+        <div class="w-full">
+          <label for="user-id" class="text-xl">User Id</label>
+          <input
+            type="text"
+            id="user-id"
+            name="userid"
+            class="border-2 w-full rounded-xl p-2"
+          />
+        </div>
+
+        <div class="w-full">
+          <label for="password" class="text-xl">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="border-2 w-full rounded-xl p-2"
+          />
+        </div>
+
+        <div class="w-full">
+          <label for="login-type" class="text-xl">Login Type</label>
+          <select
+            id="login-type"
+            name="role"
+            class="border-2 w-full rounded-xl p-2"
+          >
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-xl w-full mt-2"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

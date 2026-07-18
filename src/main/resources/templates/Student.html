@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body class="grid grid-cols-4">
+<div class="col-span-1 bg-blue-500 min-h-screen sticky top-0">
+  <h2
+          class="text-4xl flex items-center justify-center m-4 text-white font-bold"
+  >
+    Student
+  </h2>
+  <ul
+          class="list-none flex flex-col gap-5 items-center font-bold text-2xl p-2 text-white"
+  >
+    <li><a th:href="@{/dash}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="over">Overview</a></li>
+    <li><a th:href="@{/attendance}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="addS">View attendenace </a></li>
+    <li><a th:href="@{/result}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="addT"> View Result </a></li>
+    <li><a th:href="@{/logout}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl" >Log Out </a></li>
+  </ul>
+</div>
+
+<div class="col-span-3 bg-gray-200">
+  <div class="grid grid-cols-3 m-4 mb-5 p-4 gap-10 ">
+    <div
+            id="card-1"
+            class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl "
+    >
+      <h2 class="mb-4 text-center">No of Student</h2>
+      <h4 class="mb-4 text-center">Count</h4>
+    </div>
+    <div
+            id="card-2"
+            class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+    >
+      <h2 class="mb-4 text-center">No of Teacher</h2>
+      <h4 class="mb-4 text-center">Count</h4>
+    </div>
+    <div
+            id="card-3"
+            class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+    >
+      <h2 class="mb-4 text-center">Schedule</h2>
+      <h4 class="mb-4 text-center">View</h4>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

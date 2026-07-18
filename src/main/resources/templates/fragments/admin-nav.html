@@ -1,0 +1,16 @@
+<div th:fragment="myNav" class="col-span-1 bg-blue-500 min-h-screen sticky top-0">
+    <h2
+            class="text-4xl flex items-center justify-center m-4 text-white font-bold"
+    >
+        Admin
+    </h2>
+    <ul
+            class="list-none flex flex-col gap-5 items-center font-bold text-2xl p-2 text-white"
+    >
+        <li><a th:href="@{/dashboard}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="over">Overview</a></li>
+        <li><a th:href="@{/addS}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="addS">Add new student </a></li>
+        <li><a th:href="@{/addT}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="addT">Add new teacher </a></li>
+        <li><a th:href="@{/sch}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl"  id="sch">Update schedule </a></li>
+        <li><a th:href="@{/logout}" class="hover:bg-white hover:text-black hover:p-2 hover:rounded-3xl" >Log Out </a></li>
+    </ul>
+</div>

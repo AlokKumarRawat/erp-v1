@@ -1,0 +1,169 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/output.css" rel="stylesheet" />
+  </head>
+  <body class="grid grid-cols-4 scroll-smooth bg-gray-200 m-0 p-0" >
+    <div th:replace="fragments/admin-nav::myNav" id="nav"></div>
+    <div class="col-span-3 bg-gray-200 p-6">
+
+        <div class="grid grid-cols-3 m-4 mb-5 p-4 gap-10 ">
+          <div
+                  id="card-1"
+                  class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl "
+          >
+            <h2 class="mb-4 text-center">No of Student</h2>
+            <h4 class="mb-4 text-center" th:text="${studentCount}"></h4>
+          </div>
+          <div
+                  id="card-2"
+                  class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+          >
+            <h2 class="mb-4 text-center">No of Teacher</h2>
+            <h4 class="mb-4 text-center" th:text="${teacherCount}"></h4>
+          </div>
+          <div
+                  id="card-3"
+                  class="bg-blue-500 border-4 rounded-2xl text-white col-span-1 p-4 text-xl"
+          >
+            <h2 class="mb-4 text-center">Schedule</h2>
+            <h4 class="mb-4 text-center">View</h4>
+          </div>
+        </div>
+
+        <div>
+          <select name="" id="View" class="border-2 rounded-xl m-2 p-3 bg-white">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Schedule">Schedule</option>
+
+          </select>
+          <hr />
+
+          <div id="v-student">
+            <div class="">
+                        <table class="min-w-full border border-gray-300 text-center text-sm">
+                          <thead class="bg-blue-500 text-white"><tr>
+                          <th class="p-3 border">Student Id</th>
+                          <th class="p-3 border">Student Username</th>
+
+                          <th class="p-3 border">Student Name</th>
+                          <th class="p-3 border">Class</th>
+                          <th class="p-3 border">Student Email</th>
+                          <th class="p-3 border">Student Address</th>
+                          <th class="p-3 border">Student Mobile</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                            <tr th:each="student :${allStudents}">
+                              <td class="p-3 border" th:text="${student.id}" ></td>
+                              <td class="p-3 border" th:text="${student.uname}" ></td>
+                              <td class="p-3 border" th:text="${student.fullname}" ></td>
+                              <td class="p-3 border" th:text="${student.classroom}" ></td>
+
+
+                              <td class="p-3 border" th:text="${student.email}" ></td>
+                              <td class="p-3 border" th:text="${student.address}" ></td>
+                              <td class="p-3 border" th:text="${student.mobile}" ></td>
+                            </tr>
+                          </tbody>
+                        </table>
+            </div>
+          </div>
+          <div id="v-teacher" class="hidden" >
+            <div class="">
+              <table class="min-w-full border border-gray-300 text-center text-sm">
+                <thead class="bg-blue-500 text-white"><tr>
+                  <th class="p-3 border">Teacher Id</th>
+                  <th class="p-3 border">Teacher Username</th>
+
+                  <th class="p-3 border">Teacher Name</th>
+                  <th class="p-3 border">Teacher Email</th>
+                  <th class="p-3 border">Teacher Subject</th>
+                  <th class="p-3 border">Teacher Address</th>
+                  <th class="p-3 border">Teacher Mobile</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="teacher :${allTeachers}">
+                  <td class="p-3 border" th:text="${teacher.id}" ></td>
+                  <td class="p-3 border" th:text="${teacher.userid}" ></td>
+
+                  <td class="p-3 border" th:text="${teacher.fullName}" ></td>
+
+
+                  <td class="p-3 border" th:text="${teacher.email}" ></td>
+                  <td class="p-3 border" th:text="${teacher.subject}" ></td>
+                  <td class="p-3 border" th:text="${teacher.address}" ></td>
+                  <td class="p-3 border" th:text="${teacher.mobile}" ></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="v-schedule" class="hidden">
+                          <table class="min-w-full border border-gray-300 text-center text-sm m-2" >
+                          <thead class="bg-blue-600 text-white">
+                          <tr>
+                            <th class="p-3 border">Days</th>
+                            <th class="p-3 border">Lecture-1</th>
+                            <th class="p-3 border">Lecture-2</th>
+                            <th class="p-3 border">Lecture-3</th>
+                            <th class="p-3 border">Lecture-4</th>
+                            <th class="p-3 border">Lecture-5</th>
+                            <th class="p-3 border">Lecture-6</th>
+                            <th class="p-3 border">Lecture-7</th>
+                            <th class="p-3 border">Lecture-8</th>
+                          </tr>
+                          </thead>
+
+                          <tbody>
+                          <tr th:each="schedule : ${schedules}">
+
+                            <td class="p-3 border" th:text="${schedule.days}"></td>
+                            <td class="p-3 border" th:text="${schedule.first}"></td>
+                            <td class="p-3 border" th:text="${schedule.second}"></td>
+                            <td class="p-3 border" th:text="${schedule.third}"></td>
+                            <td class="p-3 border" th:text="${schedule.fourth}"></td>
+                            <td class="p-3 border" th:text="${schedule.fifth}"></td>
+                            <td class="p-3 border" th:text="${schedule.sixth}"></td>
+                            <td class="p-3 border" th:text="${schedule.seventh}"></td>
+                            <td class="p-3 border" th:text="${schedule.eighth}"></td>
+                          </tr>
+                          </tbody>
+                        </table></div>
+          </div>
+
+
+
+    </div>
+    <script>
+    const student = document.getElementById("v-student");
+    const teacher = document.getElementById("v-teacher");
+    const schedule = document.getElementById("v-schedule");
+
+    document.getElementById("View").addEventListener("change", function () {
+    const value = this.value;
+
+
+    student.classList.add("hidden");
+    teacher.classList.add("hidden");
+    schedule.classList.add("hidden");
+
+
+    if (value === "Student") {
+    student.classList.remove("hidden");
+    } else if (value === "Teacher") {
+    teacher.classList.remove("hidden");
+    } else {
+    schedule.classList.remove("hidden");
+    }
+    });
+
+    </script>
+
+  </body>
+</html>
